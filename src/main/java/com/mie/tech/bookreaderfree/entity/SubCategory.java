@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.util.Calendar;
 
 @Entity
-@Table(name = "categorys")
-public class Category {
+@Table(name = "subcategory")
+public class SubCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -13,20 +13,23 @@ public class Category {
 
     @Column(columnDefinition = "TEXT")
     private String description;
+
+    private String thumbnail;
     private String keyUrl;
+    private int categoryId;
     private long createdAt;
     private long updatedAt;
     private long deletedAt;
     private int status;
 
-    public Category() {
+    public SubCategory() {
         this.status = 1;
         this.createdAt = Calendar.getInstance().getTimeInMillis();
         this.updatedAt = Calendar.getInstance().getTimeInMillis();
         this.deletedAt = Calendar.getInstance().getTimeInMillis();
     }
 
-    public Category(int id, String name) {
+    public SubCategory(int id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -61,6 +64,22 @@ public class Category {
 
     public void setKeyUrl(String keyUrl) {
         this.keyUrl = keyUrl;
+    }
+
+    public String getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 
     public long getCreatedAt() {

@@ -10,14 +10,8 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private String avatar;
+    private String description;
     private String keyUrl;
-    private String born;
-    private String died;
-    private String pen_name;
-    private String children;
-    private String relatives;
-    private String signature;
 
     public Author() {
 
