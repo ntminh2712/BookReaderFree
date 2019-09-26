@@ -12,6 +12,8 @@ public class Author {
     private String name;
     private String description;
     private String keyUrl;
+    private String born_die;
+    private String key_name;
 
     public Author() {
 
@@ -29,14 +31,6 @@ public class Author {
         return name;
     }
 
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
-
     public String getKeyUrl() {
         return keyUrl;
     }
@@ -49,51 +43,84 @@ public class Author {
         this.name = name;
     }
 
-    public String getBorn() {
-        return born;
+    public String getDescription() {
+        return description;
     }
 
-    public void setBorn(String born) {
-        this.born = born;
+    public String getKey_name() {
+        return key_name;
     }
 
-    public String getDied() {
-        return died;
+    public void setKey_name(String key_name) {
+        this.key_name = key_name;
     }
 
-    public void setDied(String died) {
-        this.died = died;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getPen_name() {
-        return pen_name;
+    public String getBorn_die() {
+        return born_die;
     }
 
-    public void setPen_name(String pen_name) {
-        this.pen_name = pen_name;
+    public void setBorn_die(String born_die) {
+        this.born_die = born_die;
     }
 
-    public String getChildren() {
-        return children;
-    }
+    public static final class AuthorBuilder {
+        private int id;
+        private String name;
+        private String description;
+        private String keyUrl;
+        private String born_die;
+        private String key_name;
 
-    public void setChildren(String children) {
-        this.children = children;
-    }
+        private AuthorBuilder() {
+        }
 
-    public String getRelatives() {
-        return relatives;
-    }
+        public static AuthorBuilder anAuthor() {
+            return new AuthorBuilder();
+        }
 
-    public void setRelatives(String relatives) {
-        this.relatives = relatives;
-    }
+        public AuthorBuilder withId(int id) {
+            this.id = id;
+            return this;
+        }
 
-    public String getSignature() {
-        return signature;
-    }
+        public AuthorBuilder withName(String name) {
+            this.name = name;
+            return this;
+        }
 
-    public void setSignature(String signature) {
-        this.signature = signature;
+        public AuthorBuilder withDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+        public AuthorBuilder withKeyUrl(String keyUrl) {
+            this.keyUrl = keyUrl;
+            return this;
+        }
+
+        public AuthorBuilder withBorn_die(String born_die) {
+            this.born_die = born_die;
+            return this;
+        }
+
+        public AuthorBuilder withKey_name(String key_name) {
+            this.key_name = key_name;
+            return this;
+        }
+
+        public Author build() {
+            Author author = new Author();
+            author.setId(id);
+            author.setName(name);
+            author.setDescription(description);
+            author.setKeyUrl(keyUrl);
+            author.setBorn_die(born_die);
+            author.setKey_name(key_name);
+            return author;
+        }
     }
 }

@@ -57,15 +57,15 @@ public class CategoryController {
 //    Elements group = document.select("div.mw-category-generated #mw-pages div.mw-content-ltr div.mw-category");
 //        Elements elements = elementGroup.select("div.mw-category-group ul li");
 
-
-    @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<Object> getListCategory(){
-        return new ResponseEntity<>(new RESTResponse.Success()
-                .setMessage("Action get list categoy")
-                .addData(categoryService.getListCategory())
-                .setStatus(HttpStatus.OK.value())
-                .build(), HttpStatus.OK);
-    }
+//
+//    @RequestMapping(method = RequestMethod.GET)
+//    public ResponseEntity<Object> getListCategory(){
+//        return new ResponseEntity<>(new RESTResponse.Success()
+//                .setMessage("Action get list categoy")
+//                .addData(categoryService.getListCategory())
+//                .setStatus(HttpStatus.OK.value())
+//                .build(), HttpStatus.OK);
+//    }
 
 //    @RequestMapping(method = RequestMethod.GET)
 //    public ResponseEntity<Object> getCategoryById(@RequestParam(value = "id") int id){

@@ -4,26 +4,24 @@ package com.mie.tech.bookreaderfree.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "ebooks")
-public class Book {
+@Table(name = "ebook-new-release")
+public class NewReleaseBook {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  int id;
-    private  String no;
+    private int id;
+    private int no;
     private String name;
     private String author;
     private String download;
     private String category;
-    private String content;
     private String release_date;
     private String subject;
     private String avatar;
     private String language;
-    private String key_url;
 
 
-    public Book() {
+    public NewReleaseBook() {
     }
 
     public int getId() {
@@ -34,11 +32,11 @@ public class Book {
         this.id = id;
     }
 
-    public String getNo() {
+    public int getNo() {
         return no;
     }
 
-    public void setNo(String no) {
+    public void setNo(int no) {
         this.no = no;
     }
 
@@ -50,14 +48,6 @@ public class Book {
         this.name = name;
     }
 
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
     public String getDownload() {
         return download;
     }
@@ -66,20 +56,12 @@ public class Book {
         this.download = download;
     }
 
-    public String getContent() {
-        return content;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getKey_url() {
-        return key_url;
-    }
-
-    public void setKey_url(String key_url) {
-        this.key_url = key_url;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public String getCategory() {
@@ -123,102 +105,88 @@ public class Book {
         this.language = language;
     }
 
-    public static final class BookBuilder {
-        private  int id;
-        private  String no;
+    public static final class NewReleaseBookBuilder {
+        private int id;
+        private int no;
         private String name;
         private String author;
         private String download;
         private String category;
-        private String content;
         private String release_date;
         private String subject;
         private String avatar;
         private String language;
-        private String key_url;
 
-        private BookBuilder() {
+        private NewReleaseBookBuilder() {
         }
 
-        public static BookBuilder aBook() {
-            return new BookBuilder();
+        public static NewReleaseBookBuilder aNewReleaseBook() {
+            return new NewReleaseBookBuilder();
         }
 
-        public BookBuilder withId(int id) {
+        public NewReleaseBookBuilder withId(int id) {
             this.id = id;
             return this;
         }
 
-        public BookBuilder withNo(String no) {
+        public NewReleaseBookBuilder withNo(int no) {
             this.no = no;
             return this;
         }
 
-        public BookBuilder withName(String name) {
+        public NewReleaseBookBuilder withName(String name) {
             this.name = name;
             return this;
         }
 
-        public BookBuilder withAuthor(String author) {
+        public NewReleaseBookBuilder withAuthor(String author) {
             this.author = author;
             return this;
         }
 
-        public BookBuilder withDownload(String download) {
+        public NewReleaseBookBuilder withDownload(String download) {
             this.download = download;
             return this;
         }
 
-        public BookBuilder withCategory(String category) {
+        public NewReleaseBookBuilder withCategory(String category) {
             this.category = category;
             return this;
         }
 
-        public BookBuilder withContent(String content) {
-            this.content = content;
-            return this;
-        }
-
-        public BookBuilder withRelease_date(String release_date) {
+        public NewReleaseBookBuilder withRelease_date(String release_date) {
             this.release_date = release_date;
             return this;
         }
 
-        public BookBuilder withSubject(String subject) {
+        public NewReleaseBookBuilder withSubject(String subject) {
             this.subject = subject;
             return this;
         }
 
-        public BookBuilder withAvatar(String avatar) {
+        public NewReleaseBookBuilder withAvatar(String avatar) {
             this.avatar = avatar;
             return this;
         }
 
-        public BookBuilder withLanguage(String language) {
+        public NewReleaseBookBuilder withLanguage(String language) {
             this.language = language;
             return this;
         }
 
-        public BookBuilder withKey_url(String key_url) {
-            this.key_url = key_url;
-            return this;
-        }
-
-        public Book build() {
-            Book book = new Book();
-            book.setId(id);
-            book.setNo(no);
-            book.setName(name);
-            book.setAuthor(author);
-            book.setDownload(download);
-            book.setCategory(category);
-            book.setContent(content);
-            book.setRelease_date(release_date);
-            book.setSubject(subject);
-            book.setAvatar(avatar);
-            book.setLanguage(language);
-            book.setKey_url(key_url);
-            return book;
+        public NewReleaseBook build() {
+            NewReleaseBook newReleaseBook = new NewReleaseBook();
+            newReleaseBook.setId(id);
+            newReleaseBook.setNo(no);
+            newReleaseBook.setName(name);
+            newReleaseBook.setAuthor(author);
+            newReleaseBook.setDownload(download);
+            newReleaseBook.setCategory(category);
+            newReleaseBook.setRelease_date(release_date);
+            newReleaseBook.setSubject(subject);
+            newReleaseBook.setAvatar(avatar);
+            newReleaseBook.setLanguage(language);
+            return newReleaseBook;
         }
     }
 }
