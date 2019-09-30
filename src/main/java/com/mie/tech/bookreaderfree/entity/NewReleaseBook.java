@@ -4,7 +4,7 @@ package com.mie.tech.bookreaderfree.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "ebook-new-release")
+@Table(name = "new-release")
 public class NewReleaseBook {
 
     @Id
